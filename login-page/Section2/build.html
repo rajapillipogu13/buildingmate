@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Your Own Building</title>
+    <link rel="stylesheet" href="design.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Design Your Dream Building</h1>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Step 1: Select Location -->
+        <section id="step1" class="step active">
+            <h2>Select a Location</h2>
+            <div class="options">
+                <div class="option" onclick="selectOption('location', 'City', this)">
+                    <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="City">
+                    <p>City</p>
+                </div>
+                <div class="option" onclick="selectOption('location', 'Suburb', this)">
+                    <img src="https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Suburb">
+                    <p>Suburb</p>
+                </div>
+                <div class="option" onclick="selectOption('location', 'Coastal', this)">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Coastal">
+                    <p>Coastal</p>
+                </div>
+            </div>
+            <button class="next-btn" onclick="nextStep('step1', 'step2')">Next</button>
+        </section>
+
+        <!-- Step 2: Select Building Type -->
+        <section id="step2" class="step">
+            <h2>Select Building Type</h2>
+            <div class="options">
+                <div class="option" onclick="selectOption('buildingType', 'Residential', this)">
+                    <img src="Pics\res build img.jpg" alt="Residential">
+                    <p>Residential</p>
+                </div>
+                <div class="option" onclick="selectOption('buildingType', 'Premium', this)">
+                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Premium">
+                    <p>Premium</p>
+                </div>
+                <div class="option" onclick="showComingSoon()">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Office">
+                    <p>Office (Coming Soon)</p>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="back-btn" onclick="prevStep('step2', 'step1')">Back</button>
+                <button class="next-btn" onclick="nextStep('step2', 'step3')">Next</button>
+            </div>
+        </section>
+
+        <!-- Step 3: Building Area -->
+        <section id="step3" class="step">
+            <h2>Select Building Area</h2>
+            <div class="options">
+                <div class="option" onclick="selectOption('area', '167 sq yards', this)">
+                    <p>167 sq yards</p>
+                </div>
+                <div class="option" onclick="selectOption('area', '220 sq yards', this)">
+                    <p>220 sq yards</p>
+                </div>
+                <div class="option" onclick="selectOption('area', '500 sq yards', this)">
+                    <p>500 sq yards</p>
+                </div>
+            </div>
+            <div class="custom-input">
+                <input type="number" id="customArea" placeholder="Enter custom area (sq yards)" onchange="updatePreview()">
+            </div>
+            <div class="btn-group">
+                <button class="back-btn" onclick="prevStep('step3', 'step2')">Back</button>
+                <button class="next-btn" onclick="nextStep('step3', 'step4')">Next</button>
+            </div>
+        </section>
+
+        <!-- Step 4: Number of Floors -->
+        <section id="step4" class="step">
+            <h2>Number of Floors</h2>
+            <div class="options">
+                <div class="options">
+                    <div class="option" onclick="selectOption('floors', '1', this)">
+                        <p>1 Floor</p>
+                    </div>
+                    <div class="option" onclick="selectOption('floors', '2', this)">
+                        <p>2 Floors</p>
+                    </div>
+                    <div class="option" onclick="selectOption('floors', '3', this)">
+                        <p>3 Floors</p>
+                    </div>
+                </div>
+            </div>
+            <div class="custom-input">
+                <input type="number" id="customFloors" placeholder="Enter custom floors" onchange="updatePreview()">
+            </div>
+            <div class="btn-group">
+                <button class="back-btn" onclick="prevStep('step4', 'step3')">Back</button>
+                <button class="next-btn" onclick="nextStep('step4', 'step5')">Next</button>
+            </div>
+        </section>
+
+        <!-- Step 5: Interior Customization -->
+        <section id="step5" class="step">
+            <h2>Customize Interior</h2>
+            <div class="interior-options">
+                <div class="option-group">
+                    <h3>Doors & Windows</h3>
+                    <div class="options">
+                        <div class="option" onclick="selectOption('doors', 'Modern Doors', this)">
+                            <img src="Pics\modern_door_img.jpg" alt="Modern Doors">
+                            <p>Modern Doors</p>
+                        </div>
+                        <div class="option" onclick="selectOption('windows', 'Glass Windows', this)">
+                            <img src="Pics\glass_windows_img.jpg" alt="Glass Windows">
+                            <p>Glass Windows</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <h3>Flooring</h3>
+                    <div class="options">
+                        <div class="option" onclick="selectOption('flooring', 'Marble', this)">
+                            <img src="Pics\marble_floor_img.jpg" alt="Marble">
+                            <p>Marble</p>
+                        </div>
+                        <div class="option" onclick="selectOption('flooring', 'Wood', this)">
+                            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Wood">
+                            <p>Wood</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <h3>Lighting</h3>
+                    <div class="options">
+                        <div class="option" onclick="selectOption('lighting', 'Chandelier', this)">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chandelier">
+                            <p>Chandelier</p>
+                        </div>
+                        <div class="option" onclick="selectOption('lighting', 'Smart LED', this)">
+                            <img src="Pics\led_light_img.jpg" alt="Smart LED">
+                            <p>Smart LED</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="back-btn" onclick="prevStep('step5', 'step4')">Back</button>
+                <button class="next-btn" onclick="nextStep('step5', 'step6')">Next</button>
+            </div>
+        </section>
+
+        <!-- Step 6: Painting & Wallpapers -->
+        <section id="step6" class="step">
+            <h2>Choose Paint & Wallpaper</h2>
+            <div class="options">
+                <div class="option" onclick="selectOption('paint', 'Red', this)">
+                    <img src="Pics\red_room_img.jpg" alt="Red">
+                    <p>Red</p>
+                </div>
+                <div class="option" onclick="selectOption('paint', 'Blue', this)">
+                    <img src="Pics\blue_paint_img.jpg" alt="Blue">
+                    <p>Blue</p>
+                </div>
+                <div class="option" onclick="selectOption('paint', 'Green', this)">
+                    <img src="Pics\Green-Paint_img.jpg" alt="Green">
+                    <p>Green</p>
+                </div>
+                <div class="option" onclick="selectOption('wallpaper', 'Floral', this)">
+                    <img src="Pics\floral_paint_img.jpg" alt="Floral">
+                    <p>Floral</p>
+                </div>
+                <div class="option" onclick="selectOption('wallpaper', 'Modern Art', this)">
+                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Modern Art">
+                    <p>Modern Art</p>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="back-btn" onclick="prevStep('step6', 'step5')">Back</button>
+                <button class="next-btn" onclick="nextStep('step6', 'step7')">Next</button>
+            </div>
+        </section>
+
+        <!-- Step 7: Swimming Pools & Outdoor Spaces -->
+        <section id="step7" class="step">
+            <h2>Outdoor Living & Pools</h2>
+            <div class="options">
+                <div class="option" onclick="selectOption('pool', 'Indoor Pool', this)">
+                    <img src="Pics\indoor_POOL_IMG.jpg" alt="Indoor Pool">
+                    <p>Indoor Pool</p>
+                </div>
+                <div class="option" onclick="selectOption('outdoor', 'Garden', this)">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Garden">
+                    <p>Garden</p>
+                </div>
+                <div class="option" onclick="selectOption('outdoor', 'Balcony', this)">
+                    <img src="Pics\BALCONY_IMG.jpg" alt="Balcony">
+                    <p>Balcony</p>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="back-btn" onclick="prevStep('step7', 'step6')">Back</button>
+                <button class="next-btn" onclick="nextStep('step7', 'step8')">Next</button>
+            </div>
+        </section>
+
+        <!-- Step 8: Additional Customization -->
+        <section id="step8" class="step">
+            <h2>Additional Features</h2>
+            <div class="options">
+                <div class="option" onclick="selectOption('stairs', 'Floating Stairs', this)">
+                    <img src="Pics\FLOATINF_STAIRS_IMG.jpg" alt="Floating Stairs">
+                    <p>Floating Stairs</p>
+                </div>
+                <div class="option" onclick="selectOption('kitchen', 'Modern Kitchen', this)">
+                    <img src="Pics\Modern_kitchen_img.jpg" alt="Modern Kitchen">
+                    <p>Modern Kitchen</p>
+                </div>
+                <div class="option" onclick="selectOption('bathroom', 'Luxury Bathroom', this)">
+                    <img src="Pics\lux_bathroom_img.jpg" alt="Luxury Bathroom">
+                    <p>Luxury Bathroom</p>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="back-btn" onclick="prevStep('step8', 'step7')">Back</button>
+                <button class="next-btn" onclick="nextStep('step8', 'summary')">Finish</button>
+            </div>
+        </section>
+
+        <!-- Final Step: Summary -->
+        <section id="summary" class="step">
+            <h2>Your Dream Building Summary</h2>
+            <div class="summary-container">
+                <div class="summary-item">
+                    <p><strong>Location:</strong> <span id="finalLocation">Not selected</span></p>
+                    <p><strong>Building Type:</strong> <span id="finalBuildingType">Not selected</span></p>
+                    <p><strong>Area:</strong> <span id="finalArea">Not selected</span></p>
+                    <p><strong>Floors:</strong> <span id="finalFloors">Not selected</span></p>
+                    <p><strong>Doors:</strong> <span id="finalDoors">Not selected</span></p>
+                    <p><strong>Flooring:</strong> <span id="finalFlooring">Not selected</span></p>
+                    <p><strong>Lighting:</strong> <span id="finalLighting">Not selected</span></p>
+                    <p><strong>Paint:</strong> <span id="finalPaint">Not selected</span></p>
+                    <p><strong>Pool:</strong> <span id="finalPool">Not selected</span></p>
+                </div>
+                <h3 class="total-cost">Total Cost: $<span id="finalCost">0</span></h3>
+            </div>
+            <div class="summary-buttons">
+                <button class="save-btn" onclick="saveDesign()">Save Design</button>
+                <button class="view-saved-btn" onclick="showSavedDesigns()">View Saved Designs</button>
+                <button class="restart-btn" onclick="restartDesign()">Start New Design</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

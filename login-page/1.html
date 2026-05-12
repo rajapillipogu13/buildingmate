@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        body {
+            padding: 30px;
+            background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+            font-family: Arial, sans-serif;
+        }
+
+        .popup {
+            width: 400px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .popup div {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .popup span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #c9d6ff;
+            color: blueviolet;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            text-decoration: underline;
+            color: blue;
+        }
+    </style>
+    <script type="module">
+        document.addEventListener("DOMContentLoaded", function () {
+            const backButton = document.getElementById("backButton");
+            
+            // Navigate back to the previous page when the Back button is clicked
+            backButton.addEventListener("click", function() {
+                window.history.back();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="popup">
+        <h1>Welcome to the Homepage</h1>
+        <div>First Name: <span id="loggedUserFName"></span></div>
+        <div>Last Name: <span id="loggedUserLName"></span></div>
+        <div>Email: <span id="loggedUserEmail"></span></div>
+        <button class="back-button" id="backButton">Back</button>
+    </div>
+</body>
+</html>

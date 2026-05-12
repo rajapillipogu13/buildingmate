@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Page</title>
+    <style>
+        body{
+            padding:30px;
+            background:linear-gradient(to right, #e2e2e2, #c9d6ff);
+            font-family: Arial, sans-serif;
+        }
+        .popup {
+            width: 400px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            text-align: center;
+            position: relative;
+        }
+        .popup div {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .popup span {
+            font-weight: lighter;
+            color: #333;
+        }
+        h1{
+            text-align:left;
+
+        }
+        button{
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #c9d6ff;
+            color: blueviolet;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover{
+            color:blue;
+        }
+        div{
+            font-weight: bold;
+            text-align: left;
+        }
+         
+    </style>
+    <script type="module">
+        document.addEventListener("DOMContentLoaded", function () {
+            const backButton = document.getElementById("backButton");
+            
+            // Navigate back to the previous page when the Back button is clicked
+            backButton.addEventListener("click", function() {
+                window.history.back();
+            });
+        });
+    </script>
+    <script type="module" src="./homepage.js"></script>
+</head>
+<body>
+    <div class="popup">
+        <h1>Account Details</h1>
+        <div>Name:    <span id="loggedUserFName"></span> <span id="loggedUserLName"></span></div>
+        <div>Email:    <span id="loggedUserEmail"></span></div>
+        <button class="back-button" id="backButton">Back</button>
+    </div>
+</body>
+</html>

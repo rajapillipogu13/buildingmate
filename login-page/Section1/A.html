@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Residential Buildings for Sale</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>Residential Buildings for Sale</h1>
+        <p>Find your dream home or investment property</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="property-list">
+        <article class="property-item">
+          <img
+            src="Pics/MR/mr1.jpg"
+            alt="Building 1"
+            class="property-image"
+          />
+          <div class="property-details">
+            <h2>Building 1</h2>
+            <p><strong>Location:</strong> Downtown City</p>
+            <p><strong>Price:</strong> $500,000</p>
+            <p><strong>Size:</strong> 3000 sqft</p>
+            <div class="button-container">
+              <a class="view-details" onclick="showDetails(this)">View Details</a>
+              <a class="buy-btn" onclick="startPurchase(this)">Buy Now</a>
+            </div>
+          </div>
+          <div class="property-more-details" style="display: none;">
+            <h3>Additional Details</h3>
+            <p><strong>Year Built:</strong> 2018</p>
+            <p><strong>Bedrooms:</strong> 4</p>
+            <p><strong>Bathrooms:</strong> 3.5</p>
+            <p><strong>Parking:</strong> 2-car garage</p>
+            <p><strong>Features:</strong> Smart home system, Solar panels, Hardwood floors</p>
+          </div>
+        </article>
+
+        <article class="property-item">
+          <img
+            src="Pics\MR\mr2.jpg"
+            alt="Building 2"
+            class="property-image"
+          />
+          <div class="property-details">
+            <h2>Building 2</h2>
+            <p><strong>Location:</strong> Uptown Area</p>
+            <p><strong>Price:</strong> $650,000</p>
+            <p><strong>Size:</strong> 3500 sqft</p>
+            <div class="button-container">
+              <a class="view-details" onclick="showDetails(this)">View Details</a>
+              <a class="buy-btn" onclick="startPurchase(this)">Buy Now</a>
+            </div>
+          </div>
+          <div class="property-more-details" style="display: none;">
+            <h3>Additional Details</h3>
+            <p><strong>Year Built:</strong> 2019</p>
+            <p><strong>Bedrooms:</strong> 5</p>
+            <p><strong>Bathrooms:</strong> 4</p>
+            <p><strong>Parking:</strong> 3-car garage</p>
+            <p><strong>Features:</strong> Rooftop deck, Home theater, Chef's kitchen</p>
+          </div>
+        </article>
+
+        <article class="property-item">
+          <img
+            src="Pics\MR\mr3.jpg"
+            alt="Building 3"
+            class="property-image"
+          />
+          <div class="property-details">
+            <h2>Building 3</h2>
+            <p><strong>Location:</strong> Suburban Heights</p>
+            <p><strong>Price:</strong> $450,000</p>
+            <p><strong>Size:</strong> 2800 sqft</p>
+            <div class="button-container">
+              <a class="view-details" onclick="showDetails(this)">View Details</a>
+              <a class="buy-btn" onclick="startPurchase(this)">Buy Now</a>
+            </div>
+          </div>
+          <div class="property-more-details" style="display: none;">
+            <h3>Additional Details</h3>
+            <p><strong>Year Built:</strong> 2017</p>
+            <p><strong>Bedrooms:</strong> 3</p>
+            <p><strong>Bathrooms:</strong> 2.5</p>
+            <p><strong>Parking:</strong> 2-car garage</p>
+            <p><strong>Features:</strong> Finished basement, Large backyard, Energy efficient</p>
+          </div>
+        </article>
+
+        <article class="property-item">
+          <img
+            src="Pics\MR\mr4.jpg"
+            alt="Building 4"
+            class="property-image"
+          />
+          <div class="property-details">
+            <h2>Building 4</h2>
+            <p><strong>Location:</strong> Lakeside View</p>
+            <p><strong>Price:</strong> $750,000</p>
+            <p><strong>Size:</strong> 4000 sqft</p>
+            <div class="button-container">
+              <a class="view-details" onclick="showDetails(this)">View Details</a>
+              <a class="buy-btn" onclick="startPurchase(this)">Buy Now</a>
+            </div>
+          </div>
+          <div class="property-more-details" style="display: none;">
+            <h3>Additional Details</h3>
+            <p><strong>Year Built:</strong> 2020</p>
+            <p><strong>Bedrooms:</strong> 4</p>
+            <p><strong>Bathrooms:</strong> 3</p>
+            <p><strong>Parking:</strong> 2-car garage + driveway</p>
+            <p><strong>Features:</strong> Smart home, Lake view, Dock access</p>
+          </div>
+        </article>
+        <article class="property-item">
+          <img
+            src="Pics\MR\mr5.jpg"
+            alt="Building 4"
+            class="property-image"
+          />
+          <div class="property-details">
+            <h2>Building 5</h2>
+            <p><strong>Location:</strong> Lakeside View</p>
+            <p><strong>Price:</strong> $750,000</p>
+            <p><strong>Size:</strong> 4000 sqft</p>
+            <div class="button-container">
+              <a class="view-details" onclick="showDetails(this)">View Details</a>
+              <a class="buy-btn">Buy Now</a>
+            </div>
+          </div>
+          <div class="property-more-details" style="display: none;">
+            <h3>Additional Details</h3>
+            <p><strong>Year Built:</strong> 2020</p>
+            <p><strong>Bedrooms:</strong> 4</p>
+            <p><strong>Bathrooms:</strong> 3</p>
+            <p><strong>Parking:</strong> 2-car garage + driveway</p>
+            <p><strong>Features:</strong> Smart home, Lake view, Dock access</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Real Estate Listings | All Rights Reserved</p>
+    </footer>
+    <script>
+        function startPurchase(link) {
+            const propertyItem = link.closest('.property-item');
+            const title = propertyItem.querySelector('h2').textContent;
+            const price = propertyItem.querySelector('p:nth-of-type(2)').textContent.replace('Price: ', '');
+            const location = propertyItem.querySelector('p:nth-of-type(1)').textContent.replace('Location: ', '');
+            const size = propertyItem.querySelector('p:nth-of-type(3)').textContent.replace('Size: ', '');
+            
+            const paymentUrl = `payment.html?title=${encodeURIComponent(title)}&price=${encodeURIComponent(price)}&location=${encodeURIComponent(location)}&size=${encodeURIComponent(size)}`;
+            window.open(paymentUrl, '_blank');
+        }
+
+        function showDetails(link) {
+            const propertyItem = link.closest('.property-item');
+            const title = propertyItem.querySelector('h2').textContent;
+            const details = {};
+            
+            // Get all detail items
+            const detailElements = propertyItem.querySelectorAll('.property-more-details p');
+            detailElements.forEach(el => {
+                const parts = el.textContent.split(':');
+                if (parts.length > 1) {
+                    details[parts[0].trim()] = parts.slice(1).join(':').trim();
+                }
+            });
+
+            // Open new window with details in full window size
+            const detailsUrl = `details.html?title=${encodeURIComponent(title)}&details=${encodeURIComponent(JSON.stringify(details))}`;
+            window.open(detailsUrl, '_blank', `width=${window.screen.width},height=${window.screen.height}`);
+        }
+    </script>
+  </body>
+</html>
